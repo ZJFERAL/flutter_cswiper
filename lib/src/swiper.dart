@@ -456,6 +456,9 @@ class _SwiperState extends _SwiperTimerMixin {
       _activeIndex = index;
     });
     if (widget.onIndexChanged != null) {
+      if (index != 0) {
+        index = widget.itemCount - index;
+      }
       widget.onIndexChanged(index);
     }
   }
